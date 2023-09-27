@@ -21,3 +21,40 @@ export const GET = async (req : Request , res : NextResponse) => {
     await prisma.$disconnect();//DB接続を切る。
   }
 }
+
+// ブログ詳細編集API
+export const PUT = async (req : Request , res : NextResponse) => {
+  try{
+    const id: number = parseInt(req.url.split("/blog/")[1]); 
+
+    const { title, description } = await req.json();
+
+    await main(); //DB接続
+    const post = await prisma.post.update({
+      data: {title, description},
+      where: { id }
+    }); 
+    return NextResponse.json({message : "Success" , post} , {status: 200}); 
+  }catch(err){
+    return NextResponse.json({message: "Error" , err}, {status: 500});
+  }finally{
+    await prisma.$disconnect();//DB接続を切る。
+  }
+}
+
+// ブログ削除API
+export const DELETE = async (req : Request , res : NextResponse) => {
+  try{
+    const id: number = parseInt(req.url.split("/blog/")[1]); 
+
+    await main(); //DB接続
+    const post = await prisma.post.delete({
+      where: { id },
+    }); 
+    return NextResponse.json({message : "Success" , post} , {status: 200}); 
+  }catch(err){
+    return NextResponse.json({message: "Error" , err}, {status: 500});
+  }finally{
+    await prisma.$disconnect();//DB接続を切る。
+  }
+}
