@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PostType } from './types';
 
+// 全記事取得API
 async function fetchAllBlog() {
   const res = await fetch(`http://localhost:3000/api/blog`,{
     cache: "no-store", //SSR(Server Side Rendering) → 更新が頻繁に行われるブログなどに有効。

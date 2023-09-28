@@ -41,10 +41,10 @@ const PostBlog = () => {
   return (
   <>
   <Toaster/>
-  <div className="w-full m-auto flex my-4">
+  <div className="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 flex">
     <div className="flex flex-col justify-center items-center m-auto">
       <p className="text-2xl text-slate-600 font-bold p-3">ブログ新規作成 🚀</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="text-center">
         <input
           ref = {titleRef}
           placeholder="タイトルを入力"
