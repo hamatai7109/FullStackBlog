@@ -42,20 +42,20 @@ const PostBlog = () => {
   return (
   <>
   <Toaster/>
-  <div className="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 flex">
-    <div className="flex flex-col justify-center items-center m-auto">
-      <p className="text-2xl text-slate-600 font-bold p-3">ブログ新規作成 🚀</p>
+  <div className="w-3/4 absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 flex">
+    <div className="w-full mx-auto">
+      <p className="text-4xl text-center text-slate-600 font-bold p-3">ブログ新規作成 🚀</p>
       <form onSubmit={handleSubmit} className="text-center">
         <input
           ref = {titleRef}
           placeholder="タイトルを入力"
           type="text"
-          className="rounded-md px-4 w-full py-2 my-2"
+          className="rounded-md px-4 w-1/2 py-2 my-5"
         />
         <textarea
           ref = {descriptionRef}
           placeholder="記事詳細を入力"
-          className="rounded-md px-4 py-2 w-full my-2"
+          className="h-96 rounded-md px-4 py-2 w-full my-2"
         ></textarea>
         <button className="font-semibold px-4 py-2 shadow-xl bg-slate-200 rounded-lg m-auto hover:bg-slate-100">
           投稿

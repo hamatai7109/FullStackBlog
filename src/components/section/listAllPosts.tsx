@@ -25,7 +25,7 @@ export default async function ListAllPosts(){
         ) => (
           <div
             key={post.id}
-            className="p-4 rounded-md mx-3 my-2 bg-slate-300"
+            className="p-4 rounded-md mx-3 mb-8 bg-slate-300"
           >
             <div className="flex items-center my-3">
               <div className="mr-auto">
