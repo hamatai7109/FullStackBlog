@@ -1,6 +1,8 @@
 "use client";
 
+import BackButton from "@/components/util/button/backButton";
 import { data } from "autoprefixer";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { use, useEffect, useRef } from "react";
 import {Toaster,toast} from "react-hot-toast";
@@ -114,6 +116,7 @@ const EditPost = ({params}: {params: {id: number}}) => {
             className="font-semibold px-4 py-2 shadow-xl bg-slate-200 rounded-lg m-auto my-5 hover:bg-red-200">
             削除
           </button>
+          <BackButton/>
       </div>
     </div>
   </>

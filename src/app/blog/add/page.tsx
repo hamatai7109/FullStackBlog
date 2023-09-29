@@ -1,5 +1,6 @@
 "use client";//CL(クライアントレンダリングに変更)：デフォルトではSSRになっており、useRefなどのHooksが使えないため。
 
+import BackButton from "@/components/util/button/backButton";
 import { useRouter } from "next/navigation";
 import React from "react"
 import { useRef } from "react";
@@ -60,6 +61,7 @@ const PostBlog = () => {
           投稿
         </button>
       </form>
+      <BackButton/>
     </div>
   </div>
   </>
