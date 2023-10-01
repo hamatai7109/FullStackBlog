@@ -18,14 +18,14 @@ export default async function TopMain() {
 
   return (
     <div className="w-2/3">
-      <div className="w-full">
+      <div className="w-full flex gap-2 flex-wrap">
         {posts.map(
           (
             post: PostType //map関数で、配列（ブログ記事）を順番に並べていく。()だとreturn省略OK、{}だとreturnが必要
           ) => (
             <div
               key={post.id}
-              className="p-4 rounded-md mx-3 mb-8 bg-slate-300"
+              className="w-[calc(100%-40px)] p-4 rounded-md bg-slate-300"
             >
               <div className="flex items-center my-3">
                 <div className="mr-auto">
