@@ -14,5 +14,22 @@ model Post {
   id Int @id @default(autoincrement())
   title String
   description String
-  date DateTime @default(now())
+  author String
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+  categories  Category[]
+  tags        Tag[]
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  blogPosts   Post[]
+}
+
+model Tag {
+  id        Int       @id @default(autoincrement())
+  name      String
+  blogPosts Post[]
 }

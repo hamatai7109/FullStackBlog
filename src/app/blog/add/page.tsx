@@ -1,6 +1,6 @@
 "use client"; //CL(クライアントレンダリングに変更)：デフォルトではSSRになっており、useRefなどのHooksが使えないため。
 
-import BackButton from "../../../../components/util/backButton";
+import BackButton from "../../../components/util/backButton";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useRef } from "react";

@@ -1,5 +1,6 @@
-import SideBar from "../../components/section/sideBar";
-import TopMain from "../../components/section/topMain";
+import Footer from "@/components/section/footer";
+import SideBar from "../components/section/sideBar";
+import TopMain from "../components/section/topMain";
 
 export default async function Home() {
   return (
@@ -13,6 +14,7 @@ export default async function Home() {
         <TopMain />
         <SideBar />
       </div>
+      <Footer />
     </main>
   );
 }

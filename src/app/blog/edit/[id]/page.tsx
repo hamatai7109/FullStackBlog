@@ -1,6 +1,6 @@
 "use client";
 
-import BackButton from "../../../../../components/util/backButton";
+import BackButton from "../../../../components/util/backButton";
 import { data } from "autoprefixer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -92,7 +92,7 @@ const EditPost = ({ params }: { params: { id: number } }) => {
   return (
     <>
       <Toaster />
-      <div className="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 flex">
+      <div>
         <div className="flex flex-col justify-center items-center m-auto">
           <p className="text-2xl text-slate-600 font-bold p-3">
             ブログの編集 🚀
