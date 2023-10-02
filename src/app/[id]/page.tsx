@@ -13,7 +13,7 @@ const getBlogId = async (id: number) => {
 
 // メイン
 const showPost = async ({ params }: { params: { id: number } }) => {
-  const post = await getBlogId(25);
+  const post = await getBlogId(params);
 
   return (
     <>
