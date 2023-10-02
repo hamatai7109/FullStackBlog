@@ -1,8 +1,6 @@
 "use client";
 
-import BackButton from "../../../../components/util/backButton";
-import { data } from "autoprefixer";
-import Link from "next/link";
+import BackButton from "@/components/util/backButton";
 import { useRouter } from "next/navigation";
 import React, { use, useEffect, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";

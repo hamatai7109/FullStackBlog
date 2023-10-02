@@ -29,9 +29,9 @@ export default async function TopMain() {
             >
               <div className="flex items-center my-3">
                 <div className="mr-auto">
-                  <h2 className="mr-auto text-2xl font-semibold">
+                  <Link href={`/${post.id}`} className="mr-auto text-2xl font-semibold">
                     {post.title}
-                  </h2>
+                  </Link>
                 </div>
                 <Link
                   href={`/blog/edit/${post.id}`}
