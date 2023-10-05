@@ -1,9 +1,13 @@
 import { PostType } from "@/app/types";
 import Link from "next/link";
+import React from "react";
 
 // 全記事取得API
 async function fetchAllBlog() {
   const res = await fetch(`http://localhost:3000/api/blog`, {
+    headers: {
+      "content-Type": "application/json",
+    },
     cache: "no-store", //SSR(Server Side Rendering) → 更新が頻繁に行われるブログなどに有効。
   });
 
@@ -45,9 +49,12 @@ const Footer = async () => {
               <div key={post.id} className="mt-5">
                 <div className="my-1">
                   <div className="mr-auto">
-                    <h2 className="mr-auto text-xs font-semibold">
+                    <Link
+                      href={`/blog/${post.id}`}
+                      className="mr-auto text-xs font-semibold"
+                    >
                       {post.title}
-                    </h2>
+                    </Link>
                   </div>
                 </div>
               </div>

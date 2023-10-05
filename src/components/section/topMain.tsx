@@ -5,6 +5,9 @@ import React from "react";
 // 全記事取得API
 async function fetchAllBlog() {
   const res = await fetch(`http://localhost:3000/api/blog`, {
+    headers: {
+      "content-Type": "application/json",
+    },
     cache: "no-store", //SSR(Server Side Rendering) → 更新が頻繁に行われるブログなどに有効。
   });
 
