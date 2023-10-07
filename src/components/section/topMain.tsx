@@ -21,39 +21,41 @@ export default async function TopMain() {
 
   return (
     <div className="w-2/3">
-      <div className="w-full flex gap-2 flex-wrap">
+      <div className="flex w-full flex-wrap gap-2">
         {posts.map(
           (
-            post: PostType //map関数で、配列（ブログ記事）を順番に並べていく。()だとreturn省略OK、{}だとreturnが必要
+            post: PostType, //map関数で、配列（ブログ記事）を順番に並べていく。()だとreturn省略OK、{}だとreturnが必要
           ) => (
             <div
               key={post.id}
-              className="w-[calc(100%-40px)] p-4 rounded-md bg-slate-300"
+              className="w-[calc(100%/2-20px)] rounded-md bg-slate-300 p-4 hover:bg-slate-50"
             >
-              <div className="flex items-center my-3">
-                <div className="mr-auto">
-                  <h2 className="mr-auto text-2xl font-semibold">
+              <div className="my-3 flex items-center justify-between">
+                <div>
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="text-lg font-semibold hover:underline"
+                  >
                     {post.title}
-                  </h2>
+                  </Link>
                 </div>
                 <Link
                   href={`/blog/edit/${post.id}`}
-                  className="px-4 py-1 text-center text-xl bg-slate-900 rounded-md font-semibold text-slate-200"
+                  className="rounded-md bg-slate-900 px-3 py-1 text-center text-lg font-semibold text-slate-200 opacity-50 hover:opacity-100"
                 >
                   編集
                 </Link>
               </div>
-              <div className="mr-auto my-1">
+              <div className="my-1 mr-auto">
                 <blockquote className="font-bold text-slate-700">
                   {new Date(post.date).toDateString()}
                 </blockquote>
               </div>
-
-              <div className="mr-auto my-1">
+              <div className="my-1 mr-auto">
                 <h2>{post.description}</h2>
               </div>
             </div>
-          )
+          ),
         )}
       </div>
     </div>
