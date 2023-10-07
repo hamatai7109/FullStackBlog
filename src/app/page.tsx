@@ -1,6 +1,7 @@
 import Footer from "@/components/section/footer";
 import SideBar from "../components/section/sideBar";
 import TopMain from "../components/section/topMain";
+import Header from "@/components/base/header";
 
 export default async function Home() {
   return (

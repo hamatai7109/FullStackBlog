@@ -39,12 +39,12 @@ export default async function TopMain() {
                     {post.title}
                   </Link>
                 </div>
-                <Link
+                {/* <Link
                   href={`/blog/edit/${post.id}`}
                   className="rounded-md bg-slate-900 px-3 py-1 text-center text-lg font-semibold text-slate-200 opacity-50 hover:opacity-100"
                 >
                   編集
-                </Link>
+                </Link> */}
               </div>
               <div className="my-1 mr-auto">
                 <blockquote className="font-bold text-slate-700">
