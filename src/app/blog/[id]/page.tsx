@@ -1,12 +1,14 @@
 "use client";
 
-import { PostType } from "@/app/types";
+import { PostType } from "@/lib/types";
 import Profile from "@/components/util/profile";
+import TableContents from "@/components/util/tableContents";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons/faGithubAlt";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import Header from "@/components/base/header";
 
 //API取得用関数(詳細ページの内容を受け取る)
 const getBlogId = async (id: number): Promise<PostType> => {
@@ -33,6 +35,7 @@ const detailPage = ({ params }: { params: { id: number } }) => {
 
   return (
     <div>
+      <Header />
       {blogPost ? (
         <div>
           <div className="text-center">
@@ -58,8 +61,9 @@ const detailPage = ({ params }: { params: { id: number } }) => {
             <div className="w-8/12 rounded-md bg-white p-7">
               <p>{blogPost.description}</p>
             </div>
-            <div className="w-3/12 rounded-md bg-white">
+            <div className="w-3/12">
               <Profile />
+              <TableContents />
             </div>
           </div>
         </div>

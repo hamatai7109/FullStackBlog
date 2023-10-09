@@ -6,7 +6,7 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <div className="mx-auto w-3/4 px-1 py-5">
+    <div className="mx-auto w-full rounded-md bg-white px-4 py-5">
       <div className="flex items-center gap-5">
         <FontAwesomeIcon
           className="rounded-full border-2 border-blue-500 p-3 text-5xl"
