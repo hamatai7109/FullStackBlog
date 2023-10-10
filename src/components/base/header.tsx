@@ -17,12 +17,6 @@ export default function Header() {
             >
               HOME
             </Link>
-            {/* <Link
-              href={"/blog/add"}
-              className="rounded-md bg-slate-300 p-2 text-center font-semibold"
-            >
-              ブログ新規作成
-            </Link> */}
             <Link
               href={"/admin/signup"}
               className="rounded-md bg-slate-300 p-2 text-center font-semibold"

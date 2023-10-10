@@ -1,6 +1,6 @@
 "use client";
 
-import BackButton from "@/components/util/backButton";
+import BackButton from "@/components/util/button/backButton";
 import { useRouter } from "next/navigation";
 import React, { use, useEffect, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
@@ -9,7 +9,7 @@ import { Toaster, toast } from "react-hot-toast";
 const editBlog = async (
   title: string | undefined,
   description: string | undefined,
-  id: number
+  id: number,
 ) => {
   const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
     method: "PUT",
@@ -55,7 +55,7 @@ const EditPost = ({ params }: { params: { id: number } }) => {
     await editBlog(
       titleRef.current?.value,
       descriptionRef.current?.value,
-      params.id
+      params.id,
     );
     toast.success("編集に成功しました！", { id: toastId });
 
@@ -91,8 +91,8 @@ const EditPost = ({ params }: { params: { id: number } }) => {
     <>
       <Toaster />
       <div>
-        <div className="flex flex-col justify-center items-center m-auto">
-          <p className="text-2xl text-slate-600 font-bold p-3">
+        <div className="m-auto flex flex-col items-center justify-center">
+          <p className="p-3 text-2xl font-bold text-slate-600">
             ブログの編集 🚀
           </p>
           <form onSubmit={handleSubmit} className="text-center">
@@ -100,20 +100,20 @@ const EditPost = ({ params }: { params: { id: number } }) => {
               ref={titleRef}
               placeholder="タイトルを入力"
               type="text"
-              className="rounded-md px-4 w-full py-2 my-2"
+              className="my-2 w-full rounded-md px-4 py-2"
             />
             <textarea
               ref={descriptionRef}
               placeholder="記事詳細を入力"
-              className="rounded-md px-4 py-2 w-full my-2"
+              className="my-2 w-full rounded-md px-4 py-2"
             ></textarea>
-            <button className="font-semibold px-4 py-2 shadow-xl bg-slate-200 rounded-lg hover:bg-slate-100">
+            <button className="rounded-lg bg-slate-200 px-4 py-2 font-semibold shadow-xl hover:bg-slate-100">
               更新
             </button>
           </form>
           <button
             onClick={handleDelete}
-            className="font-semibold px-4 py-2 shadow-xl bg-slate-200 rounded-lg m-auto my-5 hover:bg-red-200"
+            className="m-auto my-5 rounded-lg bg-slate-200 px-4 py-2 font-semibold shadow-xl hover:bg-red-200"
           >
             削除
           </button>

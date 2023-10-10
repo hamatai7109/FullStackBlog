@@ -13,19 +13,6 @@ export const GitHubAuthButton = ({ session }: { session: Session | null }) => {
   const supabase = createClientComponentClient();
   const router = useRouter();
 
-  // // メールでのサインイン
-  // async function signInWithEmail() {
-  //   const { data, error } = await supabase.auth.signInWithPassword({
-  //     email: "example@email.com",
-  //     password: "example-password",
-  //   });
-  // }
-
-  // // メールでのサインアウト
-  // async function signOut() {
-  //   const { error } = await supabase.auth.signOut();
-  // }
-
   // サインイン処理
   const handleSignIn = async () => {
     // GitHub OAuthで認証する
