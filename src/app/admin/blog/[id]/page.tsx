@@ -4,7 +4,6 @@ import { PostType } from "@/lib/types";
 import Profile from "@/components/util/profile";
 import TableContents from "@/components/util/tableContents";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faGithubAlt } from "@fortawesome/free-brands-svg-icons/faGithubAlt";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
