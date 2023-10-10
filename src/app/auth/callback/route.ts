@@ -14,5 +14,6 @@ export async function GET(request: NextRequest) {
   }
 
   // サインイン後にリダイレクトするURLを指定
-  return NextResponse.redirect(requestUrl.origin);
+  // return NextResponse.redirect(requestUrl.origin);
+  return NextResponse.redirect("http://localhost:3000/admin/dashboard");
 }

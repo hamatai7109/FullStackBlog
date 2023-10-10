@@ -16,7 +16,7 @@ const getBlogId = async (id: number): Promise<PostType> => {
   return data.post;
 };
 
-const detailPage = ({ params }: { params: { id: number } }) => {
+const DetailPage = ({ params }: { params: { id: number } }) => {
   const [blogPost, setBlogPost] = useState<PostType | null>(null);
 
   useEffect(() => {
@@ -75,4 +75,4 @@ const detailPage = ({ params }: { params: { id: number } }) => {
   );
 };
 
-export default detailPage;
+export default DetailPage;
